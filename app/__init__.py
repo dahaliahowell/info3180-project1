@@ -4,10 +4,7 @@ from .config import Config
 
 app = Flask(__name__)
 
-app.config.from_object(Config)
-
 db = SQLAlchemy(app)
-from .models import Property
-db.create_all()
 
+app.config.from_object(Config)
 from app import views
